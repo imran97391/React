@@ -11,15 +11,19 @@ jobs:
 
     defaults:
       run:
-        working-directory: my-react-app
+        working-directory: ReactFirst
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      - run: npm install
+      - name: Install Dependencies
+        run: npm install
 
-      - run: npm run build
+      - name: Build
+        run: npm run build
